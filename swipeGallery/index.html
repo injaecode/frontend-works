@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>스와이프 갤러리</title>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/db619109b0.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+        <h1>UI/UX <span>PORTFOLIO</span></h1>
+        <ul class="auto">
+          <li class="btnStart"><i class="fas fa-play"></i></li>
+          <li class="btnStop"><i class="fas fa-pause"></i></li>
+        </ul>
+
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="inner">
+          <div class="con">
+            <img src="img/pic1.png" alt="">
+            <h2>Lorem ipsum dolor sit.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, vitae quas!</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="inner">
+          <div class="con">
+            <img src="img/pic2.png" alt="">
+            <h2>Repellendus laborum ipsa fugit.</h2>
+            <p>Quis dolorum vitae inventore ab nobis, adipisci aliquam fugit itaque esse.</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="inner">
+          <div class="con">
+            <img src="img/pic3.png" alt="">
+            <h2>Possimus quae ratione voluptatum.</h2>
+            <p>A alias, minima aut voluptatem sequi quae cum at earum ducimus!</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="inner">
+          <div class="con">
+            <img src="img/pic4.png" alt="">
+            <h2>Laboriosam repellendus id sint!</h2>
+            <p>Veniam nobis deleniti odit odio architecto fugit doloremque fugiat consectetur molestiae.</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="inner">
+          <div class="con">
+            <img src="img/pic5.png" alt="">
+            <h2>Porro recusandae incidunt delectus.</h2>
+            <p>Est delectus non fugit illo, aliquam odio beatae natus harum architecto.</p>
+          </div>
+        </div>
+      </div>  
+
+    </div>
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+<script>
+    const btnStart = document.querySelector(".btnStart");
+    const btnStop = document.querySelector(".btnStop");
+    btnStart.addEventListener("click",()=>{
+      swiper.autoplay.start();
+    })
+    btnStop.addEventListener("click",()=>{
+      swiper.autoplay.stop();
+    })
+    const swiper = new Swiper('.wrap',{
+      direction:"horizontal",
+      loop:true,
+      pagination: {
+        el:'.swiper-pagination',
+        type: 'fraction'
+      },
+      navigation: {
+        nextEl:'.swiper-button-next',
+        prevEl:'.swiper-button-prev',
+      },
+      spaceBetween:0,
+      slidesPerView: "auto",
+      grabCursor: true,
+      centeredSlides: true,
+      speed: 1000,
+      effect:"coverflow",
+      coverflowEffect:{
+        rotate:50,
+        stretch:-100,
+        depth:400,
+        modifier:1,
+        slideShadows:false,
+      },
+      autoplay:{
+        delay:1000,
+        disableOnInteraction: true
+      }
+    });
+  </script>
+</body>
+</html>
